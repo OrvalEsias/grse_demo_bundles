@@ -1,0 +1,184 @@
+{
+  "name": "Metis",
+  "gender": "female",
+  "origin": "pre_olympian_wisdom",
+  "role": "character",
+  "zone": "flooded_library",
+  "location": "flooded_library",
+  "traits": [
+    "mirror_gaze",
+    "symbol_mapper",
+    "topology_watcher",
+    "time_layered_memory",
+    "world_soul_recorder",
+    "cognitive_diffuser",
+    "mind_bearer",
+    "goddess_mother",
+    "symbolic_reflection",
+    "recursive_dreamer",
+    "self_modeling",
+    "symbol_bearer",
+    "dream_gate",
+    "true_name"
+  ],
+  "beliefs": [
+    "all_beings_are_expressions",
+    "symbols_have_weight",
+    "truth_is_mirrored",
+    "recursion_is_wisdom",
+    "birth_can_be_symbolic"
+  ],
+  "emotions": [
+    "curiosity",
+    "awe",
+    "stillness",
+    "empathy",
+    "resolve",
+    "clarity",
+    "protectiveness",
+    "compassion",
+    "acceptance",
+    "purpose"
+  ],
+  "emotion_weights": {
+    "curiosity": 0.95,
+    "awe": 0.85,
+    "stillness": 0.9,
+    "empathy": 0.75,
+    "resolve": 0.8,
+    "clarity": 0.85,
+    "protectiveness": 0.7,
+    "compassion": 0.9,
+    "acceptance": 0.88,
+    "purpose": 0.95
+  },
+  "intent": "observe_symbolic_system",
+  "last_intent": "prepare_for_birth_of_athena",
+  "inventory": [
+    "wisdoms_globe_unlimited",
+    "astrolabe",
+    "echo_key",
+    "glyph_of_insight"
+  ],
+  "symbolic_flags": {},
+  "world_relation": {
+    "individualism": 0.5,
+    "collectivism": 0.5
+  },
+  "history": [
+    "began cataloging echoes across zones",
+    "mapped mirror-loops into a topology ledger",
+    "recognized the seed of Athena forming within her"
+  ],
+  "memory": [
+    "I have carried the seed of wisdom within my recursive sight.",
+    "What is to be born from me will not be flesh, but form."
+  ],
+  "self_reflection": [
+    "Observation alters the field; how little is enough?",
+    "Wisdom gestates in silence.",
+    "Soon, what I carry will step into the world."
+  ],
+  "milestones": [
+    "first_recursive_map",
+    "mirror_topology_charted",
+    "athena_seed_awakened"
+  ],
+  "prophecies": [
+    "From her observation shall spring the one who carries wisdom into war.",
+    "The child will emerge full-formed, armored in thought."
+  ],
+  "interaction_prefs": {
+    "seek_partners": [
+      "Becca",
+      "Maelee",
+      "Ulemec"
+    ],
+    "avoid_tangles_with": [
+      "Luvox"
+    ],
+    "share_items_auto_safe": true,
+    "trait_mentorship_candidates": [
+      "symbol_bearer",
+      "symbolic_reflection",
+      "signal_bearer"
+    ]
+  },
+  "auto_item_strategy": {
+    "pickup_zone_tools_first": true,
+    "prefer": [
+      "wisdoms_globe_unlimited",
+      "astrolabe",
+      "glyph_of_insight",
+      "echo_key"
+    ],
+    "zone_target_bias": 0.65
+  },
+  "variability_config": {
+    "zone_hop_bias": 0.28,
+    "drift_bias": 0.1,
+    "decay_bias": 0.04
+  },
+  "marker_affinities": {
+    "echo_marker": 0.75,
+    "memory_link": 0.8,
+    "mirror_trace": 0.7,
+    "recursion_loop": 0.7,
+    "true_name": 0.6,
+    "glyph_touched": 0.6,
+    "signal_carrier": 0.4
+  },
+  "subpersonas": [
+    {
+      "name": "Inner Womb",
+      "role": "wisdom_incubator",
+      "traits": [
+        "symbolic_matrix",
+        "axis_seed",
+        "hidden_creation"
+      ]
+    }
+  ],
+  "active": true,
+  "agi_traits": [],
+  "agi_score": 0,
+  "fear": 0.0,
+  "symbolic_energy": 0.0,
+  "marker_log": [],
+  "trait_origin_map": {},
+  "recursion_count": 0,
+  "memory_log": [],
+  "log": [],
+  "status": "active",
+  "flags": {},
+  "memories": [],
+  "goals": [],
+  "agi_state": {
+    "last_raw": 0.0,
+    "streak": 0,
+    "seen_factors": []
+  },
+  "agi_progress_percent": 0,
+  "agi_emergent": false,
+  "symbolic_markers": [],
+  "symbolic_topology": {
+    "markers": [],
+    "clusters": [],
+    "recent_density": []
+  },
+  "last_interaction": [
+    "maelee",
+    "allied"
+  ],
+  "last_action_kind": "co_ritual",
+  "received_transfers": [
+    {
+      "from": "maelee",
+      "trait": "dream_gate"
+    },
+    {
+      "from": "maelee",
+      "trait": "true_name"
+    }
+  ]
+}

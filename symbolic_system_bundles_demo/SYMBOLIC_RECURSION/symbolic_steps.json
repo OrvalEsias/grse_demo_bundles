@@ -1,0 +1,139 @@
+{
+  "version": "1.2.0",
+  "updated_at": "2025-08-19T00:00:00Z",
+  "notes": "Expanded steps and added marker_ops so steps can programmatically add/remove markers defined in markers/markers.json.",
+  "steps": {
+    "descend_into_noise": {
+      "description": "The character descends into a realm of spiritual or media noise, destabilizing symbolic clarity.",
+      "world_effects": { "spiritual_noise": 0.2, "media_signal": -0.1 },
+      "trait_effects": [],
+      "flags": ["noise_event"],
+      "marker_ops": [
+        { "op": "add", "scope": "zone", "marker_id": "zone_shift", "stacks": 1, "duration_ticks_override": 4 }
+      ]
+    },
+    "see_self_create_world": {
+      "description": "The character perceives their own influence on the symbolic structure of the world.",
+      "world_effects": { "symbolic_energy": 0.15 },
+      "trait_effects": ["symbol_bearer"],
+      "flags": ["recursive_insight"],
+      "marker_ops": [
+        { "op": "add", "scope": "zone", "marker_id": "insight", "stacks": 1 }
+      ]
+    },
+    "recover_memory": {
+      "description": "The character recalls a memory that realigns their present symbolic structure.",
+      "world_effects": { "spiritual_noise": 0.1 },
+      "trait_effects": ["memory_linked"],
+      "flags": ["memory_trigger"],
+      "marker_ops": [
+        { "op": "add", "scope": "zone", "marker_id": "memory_link", "stacks": 1 }
+      ]
+    },
+    "split_from_time": {
+      "description": "The character experiences a rupture or folding of time, enhancing temporal awareness.",
+      "world_effects": { "spiritual_noise": 0.15 },
+      "trait_effects": ["recursive_dreamer"],
+      "flags": ["time_loop"],
+      "marker_ops": [
+        { "op": "add", "scope": "zone", "marker_id": "recursion_loop", "stacks": 1 }
+      ]
+    },
+    "witness_child_self": {
+      "description": "The character sees a younger version of themselves, reflecting inner integration or split.",
+      "world_effects": { "individualism": -0.05, "collectivism": 0.05 },
+      "trait_effects": ["mirror_breaker"],
+      "flags": ["child_self"],
+      "marker_ops": [
+        { "op": "add", "scope": "zone", "marker_id": "mirror_trace", "stacks": 1 }
+      ]
+    },
+    "ignite_glyph": {
+      "description": "A glyph is activated, radiating symbolic energy and potentially awakening further meaning.",
+      "world_effects": { "spiritual_noise": 0.1, "symbolic_energy": 0.1 },
+      "trait_effects": ["symbol_bearer"],
+      "flags": ["glyph_event"],
+      "marker_ops": [
+        { "op": "add", "scope": "zone", "marker_id": "glyph_touched", "stacks": 1 }
+      ]
+    },
+    "echo_of_others": {
+      "description": "An echo from another presence influences the character’s symbolic state.",
+      "world_effects": { "collectivism": 0.05, "individualism": -0.05 },
+      "trait_effects": ["echo_sensitive"],
+      "flags": ["echo_contact"],
+      "marker_ops": [
+        { "op": "add", "scope": "zone", "marker_id": "echo_marker", "stacks": 1 }
+      ]
+    },
+    "duplicate_world": {
+      "description": "A symbolic artifact duplicates aspects of the world, creating a mirrored instance.",
+      "world_effects": { "spiritual_noise": 0.25, "symbolic_density": 0.05 },
+      "trait_effects": ["mirror_artifact"],
+      "flags": ["mirror_event"],
+      "marker_ops": [
+        { "op": "add", "scope": "zone", "marker_id": "mirror_sign", "stacks": 1 },
+        { "op": "add", "scope": "zone", "marker_id": "reflection_pulse", "stacks": 1 }
+      ]
+    },
+
+    // —— Added steps that map to your global/world factors & marker set ——
+    "awaken_threshold": {
+      "description": "A liminal boundary awakens, pulling attention to unseen transitions.",
+      "world_effects": { "symbolic_density": 0.05 },
+      "trait_effects": ["threshold_touched"],
+      "flags": ["threshold_event"],
+      "marker_ops": [
+        { "op": "add", "scope": "world", "marker_id": "threshold", "stacks": 1 }
+      ]
+    },
+    "repair_symbol": {
+      "description": "A broken glyph or token re-aligns into wholeness, stabilizing symbolic flows.",
+      "world_effects": { "spiritual_noise": -0.1, "symbolic_energy": 0.05 },
+      "trait_effects": ["symbol_repairer"],
+      "flags": ["repair_event"],
+      "marker_ops": [
+        { "op": "remove", "scope": "world", "marker_id": "rupture_glyph" },
+        { "op": "add", "scope": "world", "marker_id": "symbol_repair", "stacks": 1 }
+      ]
+    },
+    "rupture_symbol": {
+      "description": "A stable structure fractures, releasing contained symbolic pressure.",
+      "world_effects": { "spiritual_noise": 0.15, "symbolic_density": 0.05 },
+      "trait_effects": ["rupture_bearer"],
+      "flags": ["rupture_event"],
+      "marker_ops": [
+        { "op": "remove", "scope": "world", "marker_id": "symbol_repair" },
+        { "op": "add", "scope": "world", "marker_id": "rupture_glyph", "stacks": 1 }
+      ]
+    },
+    "light_fragment_step": {
+      "description": "A shard of symbolic light infuses the world, enhancing clarity.",
+      "world_effects": { "media_signal": 0.1 },
+      "trait_effects": ["illumination_touched"],
+      "flags": ["light_event"],
+      "marker_ops": [
+        { "op": "add", "scope": "world", "marker_id": "illumination_marker", "stacks": 1 }
+      ]
+    },
+    "shadow_trace_step": {
+      "description": "A dark residue crosses perception, thickening ambiguity.",
+      "world_effects": { "spiritual_noise": 0.1 },
+      "trait_effects": ["shadow_touched"],
+      "flags": ["shadow_event"],
+      "marker_ops": [
+        { "op": "add", "scope": "world", "marker_id": "shadow_trace", "stacks": 1 }
+      ]
+    }
+  },
+
+  "schema": {
+    "marker_op": {
+      "op": "add | remove",
+      "scope": "zone | world",
+      "marker_id": "string (from markers/markers.json)",
+      "stacks": "integer (optional; default 1)",
+      "duration_ticks_override": "integer|null (optional)"
+    }
+  }
+}

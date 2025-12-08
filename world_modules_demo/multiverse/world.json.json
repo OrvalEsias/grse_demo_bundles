@@ -1,0 +1,299 @@
+{
+  "symbolic_energy": 0.55,
+
+  "meta": {
+    "ticks": 0,
+    "zones_count": 6,
+    "symbolic_energy": 0.55,
+    "symbolic_energy_detail": {
+      "baseline": 0.55,
+      "amplifier": 1.0,
+      "mirror_marker": 0.25,
+      "threshold": 0.2,
+      "urban_symbol": 0.2,
+      "glyph_marker": 0.25,
+      "echo_fragment": 0.3,
+      "recursive_seed": 0.25,
+      "signal_thread": 0.2,
+      "reflection_pulse": 0.2,
+      "illumination_marker": 0.25,
+      "dream_fragment": 0.25,
+      "emergence_marker": 0.25,
+      "light_fragment": 0.3,
+      "shadow_trace": 0.2,
+      "anima_loop": 0.2,
+      "symbol_repair": 0.2,
+      "voice_marker": 0.2,
+      "seed_pattern": 0.3,
+      "rupture_glyph": 0.25,
+      "world_nudge": 0.05,
+      "logos_cut": 0.2,
+      "foresight": 0.15,
+      "renewal": 0.2,
+      "flame": 0.15,
+      "storm": 0.1,
+      "tideline": 0.1
+    },
+    "symbolic_density": 0.35,
+    "spiritual_noise": 0.90,
+    "media_signal": 0.10,
+    "world_age": 12
+  },
+
+  "symbolic_energy_history": [0.42, 0.45, 0.48, 0.50, 0.55],
+  "world_events": [
+    "descend_into_noise",
+    "see_self_create_world",
+    "recover_memory",
+    "split_from_time",
+    "witness_child_self",
+    "ignite_glyph",
+    "echo_of_others",
+    "duplicate_world"
+  ],
+
+  "density_log": [0.28, 0.30, 0.33, 0.31, 0.35],
+
+  "active_markers": {
+    "noise_event": true,
+    "recursive_insight": true,
+    "memory_trigger": true,
+    "time_loop": true,
+    "child_self": true,
+    "glyph_event": true,
+    "echo_contact": true,
+    "mirror_event": true
+  },
+
+  "pending_prompts": [
+    "use glyph_of_insight on self",
+    "activate broadcast_signal at zone:signal_vault",
+    "use rusted_key on zone:ancient_gate",
+    "use seed_of_renewal on zone:flooded_library",
+    "use wand_of_inner_vision on zone:reflected_chamber",
+    "use sealed_book on zone:flooded_library",
+    "use wisdoms_globe on zone:flooded_library",
+    "use crystal_orb on zone:reflected_chamber",
+    "use sword_of_logos on zone:current",
+    "use healing_potion on zone:market_ruins",
+    "bind_true_name at zone:market_ruins",
+    "use glyphstone on zone:reflected_chamber",
+    "deploy amplifier_node at zone:signal_vault",
+    "use mirror_wand on zone:reflected_chamber",
+    "use driftwood_wand on zone:flooded_library"
+  ],
+
+  "features": {
+    "individualism": { "value": 0.45, "trend": "falling", "history": [0.48, 0.51, 0.53, 0.55, 0.45] },
+    "collectivism": { "value": 0.55, "trend": "rising", "history": [0.52, 0.49, 0.47, 0.45, 0.55] }
+  },
+
+  "zones": {
+    "dream_gate": {
+      "id": "dream_gate",
+      "name": "dream_gate",
+      "label": "Dream Gate",
+      "type": "gate",
+      "status": "active",
+      "version": "1.0.0",
+      "description": "A shimmering threshold between memory and myth. Symbols swirl in the mist.",
+      "traits": ["symbolic_reflection", "threshold_attunement"],
+      "symbolic_tags": ["threshold", "dream", "mirror"],
+      "items": ["mirror_wand", "glyph_of_insight", "rusted_key"],
+      "links": ["market_ruins", "reflected_chamber"],
+      "narrative": [],
+      "energy": 0.20,
+      "symbolic_density": 0.20,
+      "soft_cap": 8.0,
+      "default_intent": "attune_self",
+      "features": { "ambient_markers": ["echo_marker", "glyph_touched"] },
+      "weather": {},
+      "rules": {},
+      "timers": {},
+      "history": []
+    },
+
+    "market_ruins": {
+      "id": "market_ruins",
+      "name": "market_ruins",
+      "label": "Market Ruins",
+      "type": "market",
+      "status": "active",
+      "version": "1.0.0",
+      "description": "Crumbling stalls and ancient signs of commerce. A place heavy with forgotten trade.",
+      "traits": ["trade_echo", "quiet_omen"],
+      "symbolic_tags": ["trade", "bargain", "trace"],
+      "items": ["healing_potion", "symbolic_coin"],
+      "links": ["dream_gate", "signal_vault", "reflected_chamber"],
+      "locked_zones": ["ancient_gate"],
+      "narrative": [],
+      "energy": 0.15,
+      "symbolic_density": 0.15,
+      "soft_cap": 7.5,
+      "default_intent": "bind_true_name",
+      "features": { "ambient_markers": ["true_name"] },
+      "weather": {},
+      "rules": {},
+      "timers": {},
+      "history": []
+    },
+
+    "ancient_gate": {
+      "id": "ancient_gate",
+      "name": "ancient_gate",
+      "label": "Ancient Gate",
+      "type": "gate",
+      "status": "sealed",
+      "version": "1.0.0",
+      "locked": true,
+      "description": "A towering gate sealed by rust and time. Only a special item might open it.",
+      "traits": ["sealed_threshold"],
+      "symbolic_tags": ["threshold", "ancient", "lock"],
+      "items": [],
+      "links": ["flooded_library"],
+      "narrative": [],
+      "energy": 0.00,
+      "symbolic_density": 0.00,
+      "soft_cap": 8.0,
+      "default_intent": "focus_ritual",
+      "features": {},
+      "weather": {},
+      "rules": {},
+      "timers": {},
+      "history": []
+    },
+
+    "reflected_chamber": {
+      "id": "reflected_chamber",
+      "name": "reflected_chamber",
+      "label": "Reflected Chamber",
+      "type": "hall",
+      "status": "active",
+      "version": "1.0.0",
+      "description": "A quiet hall of infinite mirrors. You see versions of yourself moving independently.",
+      "traits": ["symbolic_reflection", "echo_bloom"],
+      "symbolic_tags": ["mirror", "self_model"],
+      "items": ["mirror_fragment", "crystal_orb", "sword_of_logos"],
+      "links": ["dream_gate", "market_ruins"],
+      "narrative": [],
+      "energy": 0.25,
+      "symbolic_density": 0.25,
+      "soft_cap": 9.5,
+      "default_intent": "activate_glyph",
+      "features": { "ambient_markers": ["symbolic_reflection", "mirror_trace"] },
+      "weather": {},
+      "rules": {},
+      "timers": {},
+      "history": []
+    },
+
+    "signal_vault": {
+      "id": "signal_vault",
+      "name": "signal_vault",
+      "label": "Signal Vault",
+      "type": "archive",
+      "status": "active",
+      "version": "1.0.0",
+      "description": "A hidden data chamber pulsing with archived visions and ancient frequencies.",
+      "traits": ["signal_carrier"],
+      "symbolic_tags": ["archive", "broadcast", "signal"],
+      "items": ["amplifier_node", "signal_scroll"],
+      "links": ["market_ruins", "flooded_library"],
+      "narrative": [],
+      "energy": 0.30,
+      "symbolic_density": 0.30,
+      "soft_cap": 9.0,
+      "default_intent": "signal_broadcast",
+      "features": { "ambient_markers": ["signal_carrier", "broadcast_signal"] },
+      "weather": {},
+      "rules": {},
+      "timers": {},
+      "history": []
+    },
+
+    "flooded_library": {
+      "id": "flooded_library",
+      "name": "flooded_library",
+      "label": "Flooded Library",
+      "type": "archive",
+      "status": "active",
+      "version": "1.0.0",
+      "description": "Waterlogged tomes float across rippling shelves. Memories seem to echo here.",
+      "traits": ["waterlogged_stacks", "memory_current"],
+      "symbolic_tags": ["memory", "water", "echo"],
+      "items": ["sealed_book", "driftwood_wand", "wisdoms_globe"],
+      "links": ["signal_vault", "ancient_gate"],
+      "narrative": [],
+      "energy": 0.10,
+      "symbolic_density": 0.10,
+      "soft_cap": 10.0,
+      "default_intent": "focus_ritual",
+      "features": { "ambient_markers": ["memory_link"] },
+      "weather": {},
+      "rules": {},
+      "timers": {},
+      "history": []
+    }
+  },
+
+  "entities": {
+    "Archivist": {
+      "archetype": "npc",
+      "home_zone": "market_ruins",
+      "affinity": { "memory": 0.7, "symbols": 0.6 },
+      "gives_items": ["symbolic_coin"],
+      "dialogue": "The market remembers what the vault forgets."
+    },
+    "Custodian": {
+      "archetype": "npc",
+      "home_zone": "signal_vault",
+      "affinity": { "vault": 0.9 },
+      "requires_items": ["rusted_key"],
+      "dialogue": "Keys are promises made to the past."
+    }
+  },
+
+  "scripted_encounters": [
+    {
+      "when_zone": "market_ruins",
+      "grants_marker": "memory_link",
+      "dialogue": "The Archivist whispers of lost names and partial prices."
+    },
+    {
+      "when_zone": "signal_vault",
+      "requires_item": "rusted_key",
+      "grants_marker": "broadcast_signal",
+      "dialogue": "The Custodian accepts the key; channels awaken."
+    },
+    {
+      "unlock_zone": "ancient_gate",
+      "requires_item": "rusted_key",
+      "use_phrase": "use rusted_key on zone:ancient_gate",
+      "dialogue": "The ancient gate grind-opens; the path floods with echoes."
+    },
+    {
+      "when_zone": "flooded_library",
+      "requires_item": "sealed_book",
+      "grants_marker": "echo_fragment",
+      "dialogue": "The sealed book cracks open — fragments of past voices spill into the air."
+    },
+    {
+      "when_zone": "flooded_library",
+      "requires_item": "seed_of_renewal",
+      "grants_marker": "renewal",
+      "dialogue": "Roots unfurl from the seed, knitting the waterlogged stacks with green light."
+    },
+    {
+      "when_zone": "reflected_chamber",
+      "requires_item": "crystal_orb",
+      "grants_marker": "foresight",
+      "dialogue": "The orb shimmers; outlines of tomorrow ripple in the mirrors."
+    },
+    {
+      "when_zone": "reflected_chamber",
+      "requires_item": "sword_of_logos",
+      "grants_marker": "logos_cut",
+      "dialogue": "The blade cleaves illusion; reflections snap into harsh clarity."
+    }
+  ]
+}

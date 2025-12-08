@@ -1,0 +1,74 @@
+The ErbeSystem — Individual Bundle License
+Copyright © 2025 Eric M. Erbe. All rights reserved.
+
+This License governs the use of the individually packaged module contained
+within this folder (the “Bundle”), including its code, data, models, symbolic
+structures, and documentation.
+
+────────────────────────────────────────────────────────────
+I. NON-COMMERCIAL & RESEARCH USE (BY PERMISSION ONLY)
+
+You MAY NOT use this Bundle for any purpose — including research, academic
+work, prototyping, system evaluation, or private study — without obtaining
+express written permission from the copyright holder.
+
+Permission for non-commercial or research use may be granted at the sole
+discretion of the author. Permission is revocable, non-transferable, and
+limited to the scope defined in the permission statement.
+
+Without such permission, ALL non-commercial use is prohibited.
+
+You may NOT:
+• Copy, distribute, or share this Bundle.
+• Modify or create derivative works.
+• Train AI, ML, or automated systems on this Bundle or any part of it.
+• Incorporate the Bundle into any third-party project, research pipeline,
+  dataset, system, or publication without written authorization.
+
+────────────────────────────────────────────────────────────
+II. COMMERCIAL USE
+
+Commercial use of this Bundle is strictly prohibited without a separate
+commercial license agreement signed by the copyright holder.
+
+Commercial use includes, but is not limited to:
+• Use in commercial products, games, engines, simulations, or pipelines
+• Use in paid research or consulting
+• Use in proprietary AI/ML training, evaluation, or inference systems
+• Use in revenue-generating services, platforms, or tools
+• Redistribution or sublicensing of any kind
+
+Commercial licenses may define:
+• Scope of use
+• Per-seat or per-project fees
+• Royalties or revenue sharing
+• AI/ML usage permissions
+• Integration rights
+• Support and update terms
+
+Contact: emerbe3@gmail.com for licensing inquiries.
+
+────────────────────────────────────────────────────────────
+III. ETHICAL GUIDANCE (Non-binding)
+
+This Bundle is designed to enhance human creativity, insight, symbolic reasoning,
+and understanding. Users are encouraged to employ it in ways that support human
+development, transparent systems, and beneficial applications.
+
+────────────────────────────────────────────────────────────
+IV. NO WARRANTY
+
+This Bundle is provided “as is,” with no warranty of any kind. The author shall
+not be liable for any damages arising from its use.
+
+────────────────────────────────────────────────────────────
+V. RELATION TO OTHER LICENSES
+
+This License applies ONLY to the specific Bundle in this folder. Other bundles,
+branches, or components of the ErbeSystem may have separate licensing terms.
+Permission for one Bundle does not grant permission for any other.
+
+────────────────────────────────────────────────────────────
+Signed,
+Eric M. Erbe
+2025

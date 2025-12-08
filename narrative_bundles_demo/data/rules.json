@@ -1,0 +1,157 @@
+{
+  "version": "1.2.0",
+  "updated_at": "2025-08-19T00:00:00Z",
+
+  "config": {
+    "marker_registry_path": "../markers/markers.json",
+    "max_history": 100,
+    "value_clamps": {
+      "meta.spiritual_noise": [0.0, 1.0],
+      "meta.media_signal":   [0.0, 1.0],
+      "meta.symbolic_energy":[0.0, 1.0],
+      "meta.symbolic_density":[0.0, 1.0],
+      "features.individualism.value": [0.0, 1.0],
+      "features.collectivism.value":  [0.0, 1.0]
+    }
+  },
+
+  "tick_order": [
+    "ensure_zone_marker_structs",
+    "apply_ambient_markers_world_effects",
+    "apply_runtime_markers_world_effects",
+    "decay_and_conflicts",
+    "recompute_feature_trends",
+    "sync_symbolic_energy_and_history",
+    "clamp_values",
+    "log_tick"
+  ],
+
+  "rules": {
+    "ensure_zone_marker_structs": {
+      "description": "Guarantee each zone has a runtime marker bag.",
+      "action": "for_each_zone_init",
+      "init_fields": {
+        "markers": {}
+      }
+    },
+
+    "apply_ambient_markers_world_effects": {
+      "description": "Apply effects from ambient markers (listed in features.ambient_markers). These do not decay or stack.",
+      "source": "zones[*].features.ambient_markers",
+      "resolve_via_registry": true,
+      "accumulate": {
+        "meta.spiritual_noise": "sum(marker.effects.world.spiritual_noise)",
+        "meta.media_signal":    "sum(marker.effects.world.media_signal)",
+        "meta.symbolic_density":"sum(marker.effects.world.symbolic_density)",
+        "features.individualism.value": "sum(marker.effects.world.individualism)",
+        "features.collectivism.value":  "sum(marker.effects.world.collectivism)"
+      }
+    },
+
+    "apply_runtime_markers_world_effects": {
+      "description": "Apply world + zone effects from per-zone runtime markers in zones[*].markers using your schema.",
+      "source": "zones[*].markers",
+      "resolve_via_registry": true,
+      "algorithm_notes": [
+        "• Read registry[marker_id].effects.world and .effects.zone.",
+        "• If a key ends with _per_stack, multiply by state.stacks.",
+        "• Otherwise apply the numeric once (or multiply by stacks if you prefer; this engine applies once).",
+        "• Recognized zone keys: energy, energy_per_stack.",
+        "• Only runtime markers decay; ambient markers do not."
+      ],
+      "accumulate_world": {
+        "meta.spiritual_noise": "sum(effects.world.spiritual_noise + effects.world.spiritual_noise_per_stack*stacks)",
+        "meta.media_signal":    "sum(effects.world.media_signal + effects.world.media_signal_per_stack*stacks)",
+        "meta.symbolic_density":"sum(effects.world.symbolic_density + effects.world.symbolic_density_per_stack*stacks)",
+        "features.individualism.value": "sum(effects.world.individualism + effects.world.individualism_per_stack*stacks)",
+        "features.collectivism.value":  "sum(effects.world.collectivism + effects.world.collectivism_per_stack*stacks)"
+      },
+      "accumulate_zone": {
+        "zones[*].energy": "sum(effects.zone.energy + effects.zone.energy_per_stack*stacks)"
+      }
+    },
+
+    "decay_and_conflicts": {
+      "description": "Handle duration/TTL, stacking policies, and conflict resolution per your schema.",
+      "source": "zones[*].markers",
+      "resolve_via_registry": true,
+      "process": [
+        "for each (marker_id, state) in zone.markers:",
+        "  let def = registry[marker_id]",
+        "  // duration",
+        "  if def.duration_policy == 'permanent': continue",
+        "  if state.ttl is null:",
+        "     state.ttl = def.duration_ticks",
+        "  else:",
+        "     state.ttl = state.ttl - 1",
+        "  if state.ttl <= 0: delete marker",
+        "",
+        "  // stacking guard",
+        "  if def.stackable != true:",
+        "     state.stacks = 1",
+        "  else if def.max_stacks != null and state.stacks > def.max_stacks:",
+        "     state.stacks = def.max_stacks",
+        "",
+        "  // conflicts (same zone): remove lower priority per ui.priority",
+        "  for each conflict_id in (def.conflicts_with or []):",
+        "     if zone.markers[conflict_id] exists:",
+        "        let a = def.ui.priority or 0",
+        "        let b = (registry[conflict_id].ui.priority or 0)",
+        "        if a >= b: delete zone.markers[conflict_id] else delete zone.markers[marker_id]"
+      ]
+    },
+
+    "recompute_feature_trends": {
+      "description": "Update rising/falling trend flags based on last two history points.",
+      "action": "update_trends",
+      "targets": [
+        {
+          "path": "features.individualism",
+          "history_path": "features.individualism.history",
+          "value_path": "features.individualism.value"
+        },
+        {
+          "path": "features.collectivism",
+          "history_path": "features.collectivism.history",
+          "value_path": "features.collectivism.value"
+        }
+      ],
+      "history_limit": 32
+    },
+
+    "sync_symbolic_energy_and_history": {
+      "description": "Keep meta.symbolic_energy synced to top-level symbolic_energy and append to history.",
+      "action": "sync_and_append_history",
+      "paths": {
+        "from": "symbolic_energy",
+        "to":   "meta.symbolic_energy",
+        "history": "symbolic_energy_history"
+      }
+    },
+
+    "clamp_values": {
+      "description": "Clamp numeric values into configured ranges.",
+      "action": "clamp",
+      "use_config": "value_clamps"
+    },
+
+    "log_tick": {
+      "description": "Increment ticks and append a compact world snapshot message.",
+      "action": "increment_and_log",
+      "increment": "meta.ticks",
+      "append_to": "world_events",
+      "format": "tick:{meta.ticks}"
+    }
+  },
+
+  "integration_notes": [
+    "• Ambient markers live in zones[*].features.ambient_markers and do not decay.",
+    "• Runtime markers live in zones[*].markers as { stacks, ttl } and follow duration/stack rules from the registry.",
+    "• When adding a marker at runtime:",
+    "    - If stackable and refresh_policy=='stack': ++stacks (cap at max_stacks), reset ttl if desired.",
+    "    - If refresh_policy=='refresh': keep stacks, reset ttl to duration_ticks.",
+    "    - If refresh_policy=='extend': ttl += duration_ticks (cap at e.g. 4×duration if you want).",
+    "• Conflict resolution prefers the higher ui.priority; the lower-priority marker is removed.",
+    "• Per-stack keys supported: *_per_stack on world and zone effects (e.g., media_signal_per_stack, energy_per_stack)."
+  ]
+}

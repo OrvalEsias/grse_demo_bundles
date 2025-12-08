@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "last_updated": "2025-08-19T00:00:00Z",
+    "notes": "Narrative flavor text for zones, items, encounters, and ambient motifs."
+  },
+
+  "zones": {
+    "dream_gate": [
+      "Mist rolls like memory here. Every breath feels like a half-forgotten story.",
+      "A child’s voice hums from the other side of the threshold — not in words, but in symbols."
+    ],
+    "market_ruins": [
+      "Old signs still whisper prices, though no one is here to pay them.",
+      "You feel as if every coin dropped here would echo forever."
+    ],
+    "ancient_gate": [
+      "The metal surface is pitted and scarred. It seems more like a scar in the world than a door.",
+      "Rust peels in patterns that resemble constellations."
+    ],
+    "reflected_chamber": [
+      "You wave — and five versions of yourself wave back, each delayed by a heartbeat.",
+      "The mirrors sometimes blink before you do."
+    ],
+    "signal_vault": [
+      "A low hum fills your bones. Every shelf radiates forgotten broadcasts.",
+      "You catch static laughter in the walls, as though the past is replaying itself."
+    ],
+    "flooded_library": [
+      "Books drip and slosh, pages dissolving into memory currents.",
+      "Some shelves float. Others lean like broken teeth."
+    ]
+  },
+
+  "items": {
+    "mirror_wand": "A slender rod tipped with a shard of mirror. It hums with reflected meaning.",
+    "glyph_of_insight": "This glyph pulses softly — it wants to be read, but resists easy translation.",
+    "rusted_key": "Its teeth are dull, but its promise is sharp.",
+    "symbolic_coin": "Each flip lands on memory, not chance.",
+    "sealed_book": "The cover is warped, but the lock on its clasp feels like an echo itself.",
+    "wisdoms_globe": "A sphere of glassy water that carries fragments of memory in slow orbits.",
+    "crystal_orb": "You glimpse tomorrow’s outlines within, though never clearly.",
+    "driftwood_wand": "Saltwater still drips from its surface; it points where tides remember.",
+    "healing_potion": "Cool liquid that knits symbols back into form.",
+    "amplifier_node": "A small device, humming as though ready to catch forgotten broadcasts.",
+    "signal_scroll": "Its glyphs hum like antennas, reaching for signals long lost."
+  },
+
+  "encounters": {
+    "Archivist": [
+      "The market remembers what the vault forgets.",
+      "Some trades are never completed, yet still ripple outward."
+    ],
+    "Custodian": [
+      "Keys are promises made to the past.",
+      "Every locked door is a kind of silence."
+    ]
+  },
+
+  "global_motifs": [
+    "You hear a faint child’s laugh, just beyond the edge of the scene.",
+    "Symbols hover at the corner of vision, rearranging themselves when you blink.",
+    "Echoes stretch longer than they should, as if sound resists ending.",
+    "A shiver of static runs down your spine — perhaps the world is listening.",
+    "Somewhere nearby, an unseen page is turning."
+  ]
+}

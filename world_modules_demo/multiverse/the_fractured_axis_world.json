@@ -1,0 +1,61 @@
+{
+  "world_name": "The Fractured Axis",
+  "world_traits": {
+    "order": 0.4,
+    "chaos": 0.6,
+    "faith": 0.5,
+    "technology": 0.7
+  },
+  "regions": [
+    {
+      "name": "Lunareth Wastes",
+      "symbolic_state": "entropy",
+      "traits": {
+        "chaos": 0.9,
+        "technology": 0.2
+      },
+      "known_events": [
+        {
+          "event": "ancient_war_ruin",
+          "impact": "chaos+0.2"
+        },
+        {
+          "event": "machine_uprising",
+          "impact": "technology+0.1"
+        }
+      ]
+    },
+    {
+      "name": "Citadel of Vireon",
+      "symbolic_state": "stasis",
+      "traits": {
+        "order": 0.9,
+        "faith": 0.8
+      },
+      "known_events": [
+        {
+          "event": "coronation_of_false_king",
+          "impact": "faith-0.2"
+        },
+        {
+          "event": "arrival_of_orphan_prodigy",
+          "impact": "faith+0.1"
+        }
+      ]
+    }
+  ],
+  "recent_world_events": [
+    {
+      "event": "Axis_Tilted",
+      "trigger": "symbolic_resonance",
+      "effect": {
+        "order": -0.1,
+        "chaos": 0.1
+      },
+      "linked_characters": [
+        "Maelee",
+        "Becca"
+      ]
+    }
+  ]
+}

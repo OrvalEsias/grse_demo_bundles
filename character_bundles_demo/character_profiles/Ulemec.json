@@ -1,0 +1,45 @@
+{
+  "name": "Ulemec",
+  "role": "character",
+  "status": "active",
+  "traits": [],
+  "zone": "default_zone",
+  "milestones": [],
+  "flags": {},
+  "symbolic_flags": {},
+  "memory": [],
+  "memory_log": [],
+  "memories": [],
+  "beliefs": [],
+  "emotions": [],
+  "goals": [],
+  "fear": 0.0,
+  "intent": "unknown",
+  "last_intent": "neutral",
+  "symbolic_energy": 0.0,
+  "marker_log": [],
+  "trait_origin_map": {},
+  "recursion_count": 0,
+  "log": [],
+  "agi_traits": [],
+  "agi_score": 0,
+  "agi_state": {
+    "last_raw": 0.0,
+    "streak": 0,
+    "seen_factors": []
+  },
+  "agi_progress_percent": 0,
+  "agi_emergent": false,
+  "inventory": [],
+  "symbolic_markers": [],
+  "symbolic_topology": {
+    "markers": [],
+    "clusters": [],
+    "recent_density": []
+  },
+  "last_interaction": [
+    "avita",
+    "neutral"
+  ],
+  "last_action_kind": "activate_glyph"
+}

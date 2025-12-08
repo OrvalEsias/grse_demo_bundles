@@ -1,0 +1,39 @@
+The ErbeSystem — Symbolic Branch License
+...
+
+This Branch governs symbolic engines, archetype inference, topology systems,
+density tracking engines, resonance logic, and symbolic cognition models.
+
+────────────────────────────────────────────────────────────
+I. NON-COMMERCIAL & RESEARCH USE — BY PERMISSION ONLY
+
+Prohibited:
+• Running symbolic engines
+• Publishing symbolic logs
+• Training ML/AI on symbolic structures
+• Redistributing symbolic logic
+
+────────────────────────────────────────────────────────────
+II. COMMERCIAL USE
+
+Restricted unless licensed:
+• Symbolic-neural hybrids
+• Enterprise symbolic reasoning
+• AGI research systems
+
+Contact: emerbe3@gmail.com
+
+────────────────────────────────────────────────────────────
+III. RELATION TO OTHER LICENSES
+Follows the Root License.
+
+────────────────────────────────────────────────────────────
+IV. ETHICAL GUIDANCE
+Enhances symbolic understanding and creativity.
+
+────────────────────────────────────────────────────────────
+V. NO WARRANTY
+
+Signed,
+Eric M. Erbe
+2025

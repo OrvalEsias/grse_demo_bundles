@@ -1,0 +1,90 @@
+{
+  "world_name": "Metropolis Verge",
+  "world_traits": {
+    "individualism": 0.5,
+    "collectivism": 0.5,
+    "media_signal": 0.2,
+    "spiritual_noise": 2.0
+  },
+  "regions": [
+    {
+      "name": "East Halo District",
+      "symbolic_state": "broadcasted",
+      "traits": {
+        "media_signal": 0.9,
+        "individualism": 0.7
+      },
+      "known_events": [
+        {
+          "event": "viral_wake_incident",
+          "impact": "media_signal+0.1"
+        },
+        {
+          "event": "mass_layoffs_streamcorp",
+          "impact": "individualism+0.2"
+        }
+      ]
+    },
+    {
+      "name": "Old Eden Line",
+      "symbolic_state": "haunted",
+      "traits": {
+        "spiritual_noise": 0.7,
+        "collectivism": 0.6
+      },
+      "known_events": [
+        {
+          "event": "subway_séance",
+          "impact": "spiritual_noise+0.2"
+        },
+        {
+          "event": "mutual_aid_exodus",
+          "impact": "collectivism+0.3"
+        }
+      ]
+    },
+    {
+      "name": "Memory Verge",
+      "symbolic_state": "fractured",
+      "traits": {
+        "spiritual_noise": 0.9,
+        "media_signal": 0.3
+      },
+      "known_events": [
+        {
+          "event": "dream_shatter",
+          "impact": "spiritual_noise+0.4"
+        },
+        {
+          "event": "signal_flicker",
+          "impact": "media_signal-0.1"
+        }
+      ]
+    }
+  ],
+  "recent_world_events": [
+    {
+      "event": "Signal_Collapse",
+      "trigger": "rupture_in_saturation",
+      "effect": {
+        "media_signal": -0.2,
+        "spiritual_noise": 0.2
+      },
+      "linked_characters": [
+        "Veume",
+        "Maresh"
+      ]
+    },
+    {
+      "event": "Axis_Rising",
+      "trigger": "threshold_crossed",
+      "effect": {
+        "spiritual_noise": 0.5,
+        "individualism": -0.1
+      },
+      "linked_characters": [
+        "Becca"
+      ]
+    }
+  ]
+}
