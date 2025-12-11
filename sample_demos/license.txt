@@ -1,0 +1,59 @@
+# ERBE SAMPLE DEMO LICENSE (Free Use License)
+
+**Version 1.0 — Applies ONLY to the 5 demo modules**
+
+This license applies to the following files:
+
+* `erbe_demo_app.py`
+* `erbe_step_demo.py`
+* `mini_symbolic_engine.py`
+* `perceptual_constructor.py`
+* `perceptual_constructs_engine.py`
+
+These modules are intentionally simplified demonstration examples and do **not** contain proprietary ERBE System logic.
+
+---
+
+## 1. Permission is Granted To:
+
+You may, free of charge:
+
+* Use the demo modules for personal, educational, research, or commercial projects
+* Modify the code for any purpose
+* Redistribute the code **as long as this license text is included**
+* Include the demos in tutorials, documentation, or teaching materials
+* Use the demos in private or public GitHub repositories
+
+These permissions are granted *without requiring payment*, and are intended to encourage learning and experimentation.
+
+---
+
+## 2. Restrictions:
+
+You may **NOT**:
+
+* Claim that these demos represent the full ERBE System or commercial ERBE modules
+* Use the ERBE name or trademarks to imply endorsement
+* Sell the demos themselves as standalone products
+* Remove this license or attribution
+
+These restrictions help maintain clarity between sample demos and the proprietary system.
+
+---
+
+## 3. Warranty Disclaimer:
+
+The demo modules are provided **"as-is"**, without warranty of any kind. The author is not liable for damages, data loss, performance issues, or any other consequence of using this sample code.
+
+---
+
+## 4. Author & Contact:
+
+**Author:** Eric M. Erbe / ERBE System
+**Contact:** [ientoptic1@gmail.com](mailto:ientoptic1@gmail.com)
+
+For commercial licensing of full ERBE modules or system integrations, please use the contact above.
+
+---
+
+# End of License
