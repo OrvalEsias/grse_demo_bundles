@@ -1,5 +1,10 @@
 # GRSE Demo Branch — README
 
+https://www.ientoptic.com/
+
+https://ientoptic.gumroad.com/
+
+
 ## How GRSE Differs from Other Engines and AI Systems
 
 GRSE is not a behavior tree system, not a simple simulation toolkit, and not a traditional narrative engine. It is a **unified cognitive architecture** that integrates six subsystems—Item, Character, World, Symbolic, Recursion, and Narrative—into a single coherent framework. This makes GRSE fundamentally different from:
