@@ -1,0 +1,57 @@
+POST 1 — JUST THE DEMOS
+Title
+
+Five Tiny Symbolic System Demos (No ML, No Prompts, No Branching Trees)
+
+Body
+
+I’m sharing a small set of five lightweight Python demos that illustrate symbolic, state-driven processing without machine learning, prompt engineering, or decision trees.
+
+These are educational demos, not a full engine. Each file is short, readable, dependency-light, and runnable from the terminal.
+
+What they show:
+
+How symbolic interpretation can be derived from structure, not intent
+
+How internal state can evolve over time without branching logic
+
+How “input” can be treated as perceived data, not instructions
+
+How the same logic works in CLI or UI form
+
+What they are not:
+
+Not LLMs
+
+Not generative text systems
+
+Not chatbots
+
+Not proprietary code
+
+Included demos
+
+A single symbolic update step (CLI + Gradio UI)
+
+A minimal stateful symbolic engine
+
+A numeric perception → symbol pipeline
+
+A text perception → feature → symbol → interpretation pipeline
+
+For the perception demo, input can be a phrase, sentence, or paragraph — the system interprets structural features rather than following instructions.
+
+All demos are:
+
+Free
+
+Public
+
+Safe to share
+
+Licensed for reuse (license included)
+
+GitHub link:
+👉 [YOUR GITHUB LINK HERE]
+
+Happy to answer technical questions.

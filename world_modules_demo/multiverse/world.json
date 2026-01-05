@@ -1,0 +1,26 @@
+{
+  "symbolic_energy": 0.55,
+  "symbolic_density": 0.55,
+  "location": "signal_vault",
+  "meta": {
+    "ticks": 0,
+    "zones_count": 6,
+    "symbolic_energy": 0.55,
+    "symbolic_density": 0.55,
+    "symbolic_energy_detail": {
+      "baseline": 0.55,
+      "ambient": 0.0,
+      "runtime": 0.0
+    },
+    "updated_at": "2025-08-18T00:00:00Z"
+  },
+  "zones": {
+    "dream_gate": {},
+    "market_ruins": {},
+    "ancient_gate": {},
+    "reflected_chamber": {},
+    "signal_vault": {},
+    "flooded_library": {}
+  },
+  "tick": 24
+}

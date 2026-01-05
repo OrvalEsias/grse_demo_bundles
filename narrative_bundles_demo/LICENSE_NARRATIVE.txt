@@ -1,0 +1,39 @@
+The ErbeSystem — Narrative Branch License
+...
+
+This Branch governs narrative engines, mythic overlays, quest systems,
+symbolic story frameworks, and narrative-evolution mechanisms.
+
+────────────────────────────────────────────────────────────
+I. NON-COMMERCIAL & RESEARCH USE — BY PERMISSION ONLY
+
+Prohibited:
+• Running narrative engines
+• Publishing arc logs
+• ML/AI training on narrative structures
+• Redistributing narrative systems
+
+────────────────────────────────────────────────────────────
+II. COMMERCIAL USE
+
+Restricted unless licensed:
+• Narrative AI
+• Interactive fiction engines
+• Games and narrative systems
+
+Contact: emerbe3@gmail.com
+
+────────────────────────────────────────────────────────────
+III. RELATION TO OTHER LICENSES
+Follows Root License.
+
+────────────────────────────────────────────────────────────
+IV. ETHICAL GUIDANCE
+Supports symbolic narrative understanding.
+
+────────────────────────────────────────────────────────────
+V. NO WARRANTY
+
+Signed,
+Eric M. Erbe
+2025

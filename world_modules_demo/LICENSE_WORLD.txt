@@ -1,0 +1,38 @@
+The ErbeSystem — World Branch License
+...
+
+This License governs all world-state engines, symbolic modeling systems,
+environmental simulation logic, and recursive world frameworks.
+
+────────────────────────────────────────────────────────────
+I. NON-COMMERCIAL & RESEARCH USE — BY PERMISSION ONLY
+
+Unauthorized activities:
+• Running world engines
+• Publishing world logs
+• Using world-generation logic in research
+• AI/ML world data training
+
+────────────────────────────────────────────────────────────
+II. COMMERCIAL USE
+
+Commercial use requires a paid license for:
+• Games, engines, enterprise simulations
+• World modeling or ML-driven generation
+
+Contact: emerbe3@gmail.com
+
+────────────────────────────────────────────────────────────
+III. RELATION TO OTHER LICENSES
+Follows the Root License.
+
+────────────────────────────────────────────────────────────
+IV. ETHICAL GUIDANCE
+Supports symbolic environmental understanding.
+
+────────────────────────────────────────────────────────────
+V. NO WARRANTY
+
+Signed,
+Eric M. Erbe
+2025

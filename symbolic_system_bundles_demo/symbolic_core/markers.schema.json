@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "markers.schema.json",
+  "title": "Markers Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "markers"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "last_updated"],
+      "properties": {
+        "schema_version": { "type": "string" },
+        "last_updated": { "type": "string", "format": "date-time" },
+        "notes": { "type": "string" }
+      }
+    },
+    "markers": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/marker" }
+      /* Note: JSON Schema can’t enforce unique IDs across array items.
+         Enforce uniqueness of marker.id in your linter step. */
+    }
+  },
+
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "hexColor": {
+      "type": "string",
+      "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    },
+
+    "effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "world": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        },
+        "zone": {
+          "type": "object",
+          "additionalProperties": { "type": "number" },
+          "properties": {
+            "energy": { "type": "number" },
+            "energy_per_stack": { "type": "number" }
+          }
+        },
+        "character": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        },
+        "entity": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        }
+      }
+    },
+
+    "ui": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["icon", "color", "priority", "tooltip"],
+      "properties": {
+        "icon": { "type": "string", "minLength": 1 },
+        "color": { "$ref": "#/$defs/hexColor" },
+        "priority": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "tooltip": { "type": "string", "minLength": 1, "maxLength": 240 }
+      }
+    },
+
+    "marker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "scope",
+        "stackable",
+        "tags",
+        "duration_policy",
+        "duration_ticks",
+        "refresh_policy",
+        "conflicts_with",
+        "effects",
+        "sources",
+        "ui"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "scope": { "type": "string", "enum": ["zone", "world", "character", "entity"] },
+        "stackable": { "type": "boolean" },
+        "max_stacks": { "type": "integer", "minimum": 1 },
+        "tags": { "$ref": "#/$defs/tags" },
+
+        "duration_policy": { "type": "string", "enum": ["permanent", "timed"] },
+        "duration_ticks": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Use null for permanent markers."
+        },
+        "refresh_policy": { "type": "string", "enum": ["refresh", "stack", "extend"] },
+
+        "conflicts_with": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        },
+
+        "effects": { "$ref": "#/$defs/effects" },
+
+        "sources": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+
+        "ui": { "$ref": "#/$defs/ui" }
+      },
+
+      "allOf": [
+        {
+          "if": { "properties": { "stackable": { "const": true } } },
+          "then": { "required": ["max_stacks"] }
+        },
+        {
+          "if": { "properties": { "duration_policy": { "const": "permanent" } } },
+          "then": { "properties": { "duration_ticks": { "type": "null" } } }
+        },
+        {
+          "if": { "properties": { "duration_policy": { "const": "timed" } } },
+          "then": { "properties": { "duration_ticks": { "type": "integer", "minimum": 1 } } }
+        }
+      ]
+    }
+  }
+}

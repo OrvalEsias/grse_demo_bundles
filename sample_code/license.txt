@@ -1,0 +1,91 @@
+# ERBE SYSTEM — COMMERCIAL MODULE LICENSE
+
+**Version 1.0 — Applies to the Five Real Engine Modules Only**
+(`affect_engine.py`, `anti_stall.py`, `items_recommender.py`, `narrative_event_bus.py`, `world_weather.py`)
+
+Copyright © **Eric M. Erbe / ERBE System / GRSE**.
+All rights reserved.
+
+This is a **commercial license**, not an open‑source license.
+
+By downloading, purchasing, or using these modules, you agree to the terms below.
+
+---
+
+# 1. Permitted Use
+
+You are granted a **non‑exclusive, non‑transferable, revocable commercial license** to:
+
+* Use the modules in private or commercial projects
+* Modify the code for internal use
+* Integrate the modules into closed‑source products
+
+You **may distribute compiled applications** containing these modules, provided the source code is not exposed.
+
+---
+
+# 2. Prohibited Use
+
+You **may NOT**:
+
+* Redistribute the source code
+* Publish the source code in any repository (public or shared private)
+* Sell or sublicense the modules
+* Claim authorship or ownership
+* Use the modules to train public ML models
+* Include the modules in any open‑source project
+* Share the modules with third parties without written permission
+
+These restrictions apply **even if you modified the code**.
+
+---
+
+# 3. Modifications
+
+You may modify the code internally, but:
+
+* Modified versions remain covered by this license
+* Modified versions **cannot** be distributed as source
+* You may not circumvent restrictions by altering the code
+
+---
+
+# 4. Multi‑Seat / Studio Use
+
+Teams with more than **5 developers** require an upgraded **Studio License**.
+Contact the author for expanded rights.
+
+---
+
+# 5. Warranty & Liability
+
+The modules are provided **“as‑is”**, without warranty of any kind.
+The author is **not liable** for damages, loss of data, business interruption, or any other consequence of use.
+
+Use at your own risk.
+
+---
+
+# 6. Termination
+
+This license terminates automatically if:
+
+* You violate any term
+* You redistribute the source code
+* You publish or leak the modules
+
+Upon termination, you must delete all copies.
+
+---
+
+# 7. Contact
+
+For enterprise licensing, expanded rights, or commercial integration:
+
+**Eric M. Erbe**
+ERBE System / GRSE
+ientoptic1@gmail.com
+
+---
+
+# End of License

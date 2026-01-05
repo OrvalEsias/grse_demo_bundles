@@ -1,0 +1,39 @@
+The ErbeSystem — Item Branch License
+Copyright © 2025 ...
+
+This License governs the Item Branch (“the Branch”), covering all modules,
+bundles, symbolic item definitions, crafting engines, and item-interaction logic.
+
+────────────────────────────────────────────────────────────
+I. NON-COMMERCIAL & RESEARCH USE — BY PERMISSION ONLY
+
+Prohibited without permission:
+• Running or evaluating item engines
+• Modifying item logic
+• Training AI/ML systems using item data
+• Redistributing item systems
+
+────────────────────────────────────────────────────────────
+II. COMMERCIAL USE
+
+Commercial licensing required for:
+• Integration into games, engines, simulations
+• AI/ML item-reasoning systems
+• Monetized crafting or generation systems
+
+Contact: emerbe3@gmail.com
+
+────────────────────────────────────────────────────────────
+III. RELATION TO OTHER LICENSES
+Follows the Root License.
+
+────────────────────────────────────────────────────────────
+IV. ETHICAL GUIDANCE
+Supports structured symbolic transformation systems.
+
+────────────────────────────────────────────────────────────
+V. NO WARRANTY
+
+Signed,
+Eric M. Erbe
+2025

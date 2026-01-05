@@ -1,0 +1,112 @@
+{
+  "name": "Amda",
+  "role": "character",
+  "affiliation": "Chelis",
+  "traits": [],
+  "abilities": {
+    "primary": "Shatter Shields — crystalline barriers that fracture into offensive shards on break (shard burst + stagger).",
+    "secondary": "The Stick — modular weapon firing kinetic, prismatic, or rupture energy depending on focus.",
+    "tertiary": "Prisema Resonance — converts light into condensed bursts; toggles between healing pulses and destructive beams.",
+    "symbolic": "Big Sister’s Fury — protects the vulnerable; strikes decisively when cornered."
+  },
+  "symbolic_markers": [
+    "light_fragment",
+    "blood_oath",
+    "rupture",
+    "shatter_shield",
+    "stick",
+    "prisema_core",
+    "sanctuary"
+  ],
+  "items": {
+    "stick": {
+      "type": "modular_weapon",
+      "modes": [
+        "kinetic_blast",
+        "prism_beam",
+        "rupture_wave",
+        "scatter_shot"
+      ],
+      "cooldowns": {
+        "kinetic_blast": 4,
+        "prism_beam": 6,
+        "rupture_wave": 10,
+        "scatter_shot": 3
+      },
+      "effects": {
+        "kinetic_blast": {
+          "enemy_knockback": 2,
+          "armor_shred_percent": 5
+        },
+        "prism_beam": {
+          "dot_radiance": 0.06,
+          "blind_radius": 6
+        },
+        "rupture_wave": {
+          "stagger_sec": 1.2,
+          "shield_break_bonus": 0.25
+        },
+        "scatter_shot": {
+          "multi_hit": 5,
+          "crit_chance_bonus": 0.08
+        }
+      },
+      "aliases": [
+        "sick"
+      ],
+      "symbolic": [
+        "improvisation",
+        "orphan_weapon",
+        "versatility"
+      ]
+    }
+  },
+  "resonance": {
+    "with_avita": "Amda anchors Avita’s radiance with shields; channels spillover light through the Stick into actionable firepower.",
+    "with_becca": "Big-sister mentor—teaches survival without losing humanity."
+  },
+  "arc": {
+    "origin": "An orphan who took up care and arms in equal measure.",
+    "struggle": "Her fury risks overtaking her role as protector.",
+    "potential": "Fuses shield, weapon, and healing into a single art of salvation."
+  },
+  "status": "active",
+  "zone": "default_zone",
+  "milestones": [],
+  "flags": {},
+  "symbolic_flags": {},
+  "memory": [],
+  "memory_log": [],
+  "memories": [],
+  "beliefs": [],
+  "emotions": [],
+  "goals": [],
+  "fear": 0.0,
+  "intent": "unknown",
+  "last_intent": "neutral",
+  "symbolic_energy": 0.0,
+  "marker_log": [],
+  "trait_origin_map": {},
+  "recursion_count": 0,
+  "log": [],
+  "agi_traits": [],
+  "agi_score": 0,
+  "agi_state": {
+    "last_raw": 0.0,
+    "streak": 0,
+    "seen_factors": []
+  },
+  "agi_progress_percent": 0,
+  "agi_emergent": false,
+  "inventory": [],
+  "symbolic_topology": {
+    "markers": [],
+    "clusters": [],
+    "recent_density": []
+  },
+  "last_interaction": [
+    "Ulemec",
+    "neutral"
+  ],
+  "last_action_kind": "activate_glyph"
+}

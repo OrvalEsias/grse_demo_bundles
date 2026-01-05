@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2025-08-19T00:00:00Z",
+  "events": [],
+  "schema": {
+    "event": {
+      "id": "string-uuid",
+      "tick": "integer",
+      "timestamp": "iso-8601",
+      "actor": "character-or-entity-name",
+      "zone": "zone-id",
+      "step_id": "key from symbolic_steps.json:steps",
+      "applied": {
+        "world_effects": "object of applied deltas",
+        "trait_effects": "string[] actually applied",
+        "flags": "string[]"
+      },
+      "notes": "optional string"
+    }
+  }
+}

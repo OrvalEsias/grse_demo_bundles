@@ -1,0 +1,53 @@
+The ErbeSystem — Character Branch License
+Copyright © 2025 Eric M. Erbe. All rights reserved.
+
+This License governs the Character Branch (“the Branch”) of the ErbeSystem,
+including all modules, bundles, subsystems, symbolic models, and files
+contained within the Character directory.
+
+The Character Branch includes, but is not limited to:
+• Character cognition, emotional modeling, and belief structures
+• Character interactions, alignment, orchestration, and archetype frameworks
+• Persona layers, PWA engines, symbolic-affinity systems, AGI-threshold logic
+• State, memory, evolution, resonance, and narrative-integration functions
+
+────────────────────────────────────────────────────────────
+I. NON-COMMERCIAL & RESEARCH USE (BY PERMISSION ONLY)
+
+You MAY NOT use this Branch for any purpose — including research,
+evaluation, academic study, prototyping, or personal experimentation —
+without written permission.
+
+Without permission, you may not:
+• Run or execute the Branch
+• Modify or create derivative works
+• Train AI/ML models using any part of the Branch
+• Publish, distribute, or disclose its contents
+• Integrate the Branch into external systems
+
+────────────────────────────────────────────────────────────
+II. COMMERCIAL USE
+
+All commercial use is prohibited unless covered by a separate commercial
+license agreement.
+
+Contact: emerbe3@gmail.com
+
+────────────────────────────────────────────────────────────
+III. RELATION TO OTHER LICENSES
+
+This Branch License supplements the Root License and does not extend to
+other branches or bundles.
+
+────────────────────────────────────────────────────────────
+IV. ETHICAL GUIDANCE
+Enhances symbolic cognition and human-like reasoning.
+
+────────────────────────────────────────────────────────────
+V. NO WARRANTY
+Provided “as is.”
+
+────────────────────────────────────────────────────────────
+Signed,
+Eric M. Erbe
+2025

@@ -1,0 +1,110 @@
+# GRSE Demo Bundles License (For Public or Semi-Public Demo Distribution)
+
+Copyright © 2025 **Eric M. Erbe**. All rights reserved.
+
+This License governs the use of the **GRSE Demo Bundles**, including all code, structures, naming conventions, symbolic constructs, loaders, harnesses, demos, documentation, and architecture contained in the `grse_demo_bundles` directory.
+
+These demo bundles are **non-functional structural examples** intended solely to illustrate the modular layout of the GRSE System. They do **not** contain the operational symbolic engine, recursive engine, cognition systems, world simulators, or any production components.
+
+---
+
+# I. NO PERMISSION GRANTED (VIEW-ONLY)
+
+You are permitted to **view** the contents of this directory.
+
+No other rights are granted.
+
+You may **NOT**:
+
+* copy or redistribute any files
+* upload or mirror the bundles elsewhere
+* modify, transform, or derive new works from them
+* incorporate them into any project, tool, or dataset
+* use them internally at an organization
+* use them for research, evaluation, or analysis
+* train AI/ML systems on any part of this material
+* extract, replicate, or emulate the architecture or system patterns
+* reconstruct or reverse-engineer the GRSE System from these examples
+
+All rights not expressly granted are reserved.
+
+---
+
+# II. COMMERCIAL USE STRICTLY PROHIBITED
+
+You may **NOT** use these demo bundles for:
+
+* commercial development
+* game or engine integration
+* production pipelines
+* consulting
+* research funded by a commercial entity
+* revenue-generating systems of any kind
+
+Commercial access to the full GRSE Engine requires a separate **Commercial License Agreement**.
+
+---
+
+# III. ARCHITECTURAL & SYMBOLIC PROTECTION
+
+The following elements are protected intellectual property:
+
+* bundle organization and naming
+* loader, harness, and demo patterns
+* symbolic terminology
+* recursion and modular hierarchy
+* structural architecture and interface concepts
+* documentation patterns and system descriptions
+
+No rights are granted to reproduce, emulate, or derive systems based on these structures.
+
+Displaying this material publicly does **not** grant permission to use it.
+
+---
+
+# IV. NO AI/ML USE
+
+You may **NOT** use this material for:
+
+* model training
+* dataset construction
+* supervised or unsupervised learning
+* architecture extraction
+* symbolic mapping
+* knowledge distillation
+* reinforcement learning
+* feature mining
+* embedding generation
+
+This applies to all AI, ML, deep learning, symbolic, hybrid, and agent-based systems.
+
+---
+
+# V. NO WARRANTY
+
+These demo bundles are provided **“as is”** and contain no functional engine logic. No warranty of any kind is offered.
+
+The author is not liable for any damages arising from viewing or interacting with the files.
+
+---
+
+# VI. CONTACT FOR LICENSES TO THE REAL ENGINE
+
+To obtain:
+
+* evaluation access
+* research access
+* commercial licensing
+* integration rights
+* studio or enterprise agreements
+
+Contact:
+**[emerbe3@gmail.com](mailto:emerbe3@gmail.com)**
+
+---
+
+# VII. COPYRIGHT
+
+All demo bundles, structures, documentation, symbolic frameworks, and naming conventions remain the exclusive intellectual property of the Licensor.
+
+No rights are transferred or implied.

@@ -1,0 +1,923 @@
+{
+  "meta": {
+    "schema_version": "1.0.1",
+    "last_updated": "2025-08-19T00:00:00Z"
+  },
+  "items": [
+    {
+      "id": "stick",
+      "name": "stick",
+      "type": "modular_weapon",
+      "aliases": ["sick"],
+      "usable_on": ["self", "character", "zone"],
+      "modes": ["kinetic_blast", "prism_beam", "rupture_wave", "scatter_shot"],
+      "cooldown": 0,
+      "effects": {
+        "self": {
+          "traits_granted": ["stick_wielder"],
+          "world_effects": { "symbolic_density": 0.05 }
+        },
+        "character": {
+          "traits_granted": ["marked_by_stick"]
+        },
+        "zone": {
+          "zone_effects": { "energy": 0.02, "markers_add": ["stick_resonance"] },
+          "world_effects": { "spiritual_noise": 0.03 }
+        }
+      },
+      "flavor": {
+        "self": "[Stick] Improvised strength hums in your hands.",
+        "character": "[Stick] {target} staggers under a prismatic strike.",
+        "zone": "[Stick] The air in {zone} ripples with refracted force."
+      },
+      "vfx": {
+        "self": "glyph://stick/prime",
+        "character": "glyph://stick/mark",
+        "zone": "glyph://stick/corona"
+      },
+      "variance": {
+        "world_effects": { "symbolic_density": [0.04, 0.06] },
+        "zone_effects": { "energy": [0.01, 0.03] }
+      },
+      "scaling": {
+        "if_zone_has_marker": { "storm": { "zone.energy": "+0.01" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "mirror_wand",
+      "name": "mirror_wand",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "traits_granted": ["echo_sensitive", "symbolic_reflection"],
+      "world_effects": { "individualism": -0.05, "media_signal": 0.06 },
+      "effects": {
+        "self": {
+          "traits_granted": ["echo_sensitive", "symbolic_reflection"],
+          "world_effects": { "individualism": -0.05, "media_signal": 0.06 }
+        },
+        "character": { "traits_granted": ["echo_sensitive"] },
+        "entity": {
+          "shadow": { "state": { "revealed": true, "weakened": true } },
+          "spirit": { "state": { "revealed": true, "calmed": true } },
+          "*": { "state": { "revealed": true } }
+        },
+        "zone": {
+          "zone_effects": { "energy": 0.03, "markers_add": ["symbolic_reflection"] },
+          "world_effects": { "symbolic_density": 0.03 }
+        }
+      },
+      "flavor": {
+        "self": "The wand bends light, showing you as you truly are.",
+        "character": "A mirrored arc strikes {target}, weaving them into their own reflection.",
+        "entity": { "*": "The surface of {target} ripples and reveals its true form." },
+        "zone": "The air in {zone} becomes thick with mirrored light."
+      },
+      "vfx": {
+        "self": "🌀✨",
+        "character": "🔮🌊",
+        "entity": {
+          "golem": "🪨✨",
+          "shadow": "🌑✨",
+          "spirit": "👻✨",
+          "beast": "🐾✨",
+          "construct": "🤖✨",
+          "*": "🪞✨"
+        },
+        "zone": "🪞📡"
+      },
+      "variance": {
+        "world_effects": { "individualism": [-0.06, -0.04], "media_signal": [0.04, 0.08] },
+        "zone_effects": { "energy": [0.02, 0.05] }
+      },
+      "scaling": {
+        "if_zone_has_marker": {
+          "mirror_sign": { "zone.energy": "+0.01" },
+          "symbolic_reflection": { "world.symbolic_density": "+0.01" }
+        }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "mirror",
+      "name": "mirror",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "traits_granted": ["echo_sensitive"],
+      "world_effects": { "individualism": -0.1, "collectivism": 0.1 },
+      "effects": {
+        "self": {
+          "traits_granted": ["echo_sensitive"],
+          "world_effects": { "individualism": -0.1, "collectivism": 0.1 }
+        },
+        "character": { "traits_granted": ["echo_sensitive"] },
+        "entity": {
+          "shadow": { "state": { "reflected": true, "dissipated": true } },
+          "*": { "state": { "reflected": true } }
+        },
+        "zone": {
+          "zone_effects": { "energy": 0.02, "markers_add": ["mirror_sign"] },
+          "world_effects": { "symbolic_density": 0.02 }
+        }
+      },
+      "flavor": {
+        "self": "Your outline sharpens as the mirror breathes back your image.",
+        "character": "{target} blinks at their own gaze—echoes rise and settle.",
+        "entity": { "*": "{target} accepts a second skin of glass and light." },
+        "zone": "Walls of {zone} glaze over, returning every glance."
+      },
+      "vfx": {
+        "self": "🪞✨",
+        "character": "✨👤",
+        "entity": {
+          "golem": "🪪🪨",
+          "shadow": "🪞🌑",
+          "spirit": "🪞👻",
+          "beast": "🪞🐾",
+          "construct": "🪞🤖",
+          "*": "🪞🫧"
+        },
+        "zone": "🪞🌫️"
+      },
+      "variance": {
+        "world_effects": { "individualism": [-0.12, -0.08], "collectivism": [0.08, 0.12] },
+        "zone_effects": { "energy": [0.01, 0.03] }
+      },
+      "scaling": {
+        "if_recent_item_used": { "mirror_wand": { "world.symbolic_density": "+0.01" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "glyphstone",
+      "name": "glyphstone",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "traits_granted": ["symbol_bearer", "glyph_infused"],
+      "world_effects": { "media_signal": 0.05 },
+      "effects": {
+        "self": {
+          "traits_granted": ["symbol_bearer", "glyph_infused"],
+          "world_effects": { "media_signal": 0.05 }
+        },
+        "character": { "traits_granted": ["symbol_bearer"] },
+        "entity": {
+          "construct": { "traits_granted": ["marked_with_glyph"], "state": { "aligned": true } },
+          "*": { "traits_granted": ["marked_with_glyph"] }
+        },
+        "zone": {
+          "zone_effects": { "energy": 0.02, "markers_add": ["glyph_touched"] },
+          "world_effects": { "media_signal": 0.03, "symbolic_density": 0.02 }
+        }
+      },
+      "flavor": {
+        "self": "Runes crawl across your skin and settle into meaning.",
+        "character": "A faint sigil appears on {target}, humming with intent.",
+        "entity": { "*": "Glyphs adhere to {target}, binding sign to being." },
+        "zone": "Stone-lines etch themselves across {zone}, forming a slow diagram."
+      },
+      "vfx": {
+        "self": "🔷✨",
+        "character": "🔹📜",
+        "entity": {
+          "golem": "🔷🪨",
+          "shadow": "🔷🌑",
+          "spirit": "🔷👻",
+          "beast": "🔷🐾",
+          "construct": "🔷🤖",
+          "*": "🔷🌀"
+        },
+        "zone": "◼️🔶"
+      },
+      "variance": {
+        "world_effects": { "media_signal": [0.03, 0.07] },
+        "zone_effects": { "energy": [0.01, 0.03] }
+      },
+      "scaling": {
+        "enables_item": "sigil_of_binding",
+        "if_user_has_trait": { "symbol_mapper": { "zone.energy": "+0.01" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "healing_potion",
+      "name": "healing_potion",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "single_use": true,
+      "traits_granted": ["mended"],
+      "world_effects": { "spiritual_noise": -0.02 },
+      "effects": {
+        "self": {
+          "traits_granted": ["mended"],
+          "world_effects": { "spiritual_noise": -0.02 }
+        },
+        "character": { "traits_granted": ["mended"] },
+        "entity": {
+          "beast": { "state": { "healed": true, "calmed": true } },
+          "*": { "state": { "healed": true } }
+        },
+        "zone": {
+          "zone_effects": { "energy": 0.01, "markers_add": ["restoration"] },
+          "world_effects": { "spiritual_noise": -0.01 }
+        }
+      },
+      "flavor": {
+        "self": "Warmth blooms under your ribs as fractures knit.",
+        "character": "{target}'s breath evens; color returns to their face.",
+        "entity": { "*": "Hairline cracks in {target} seal like closing petals." },
+        "zone": "A hush settles over {zone}, like rain ending."
+      },
+      "vfx": {
+        "self": "🍃💧",
+        "character": "💧✨",
+        "entity": {
+          "golem": "💧🪨",
+          "shadow": "💧🌑",
+          "spirit": "💧👻",
+          "beast": "💧🐾",
+          "construct": "💧🤖",
+          "*": "💧🪄"
+        },
+        "zone": "🌿💧"
+      },
+      "variance": {
+        "world_effects": { "spiritual_noise": [-0.03, -0.01] }
+      },
+      "scaling": {
+        "if_zone_has_marker": { "renewal": { "zone.energy": "+0.01" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "storm_talisman",
+      "name": "storm_talisman",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "cooldown": 3,
+      "traits_granted": ["storm_bound"],
+      "world_effects": { "spiritual_noise": 0.04, "media_signal": 0.02 },
+      "effects": {
+        "self": {
+          "traits_granted": ["storm_bound"],
+          "world_effects": { "spiritual_noise": 0.04, "media_signal": 0.02 }
+        },
+        "character": { "traits_granted": ["storm_touched"] },
+        "entity": {
+          "shadow": { "state": { "disturbed": "winds", "scattered": true } },
+          "*": { "state": { "disturbed": "winds" } }
+        },
+        "zone": {
+          "zone_effects": { "energy": 0.05, "markers_add": ["storm"] },
+          "world_effects": { "spiritual_noise": 0.03 }
+        }
+      },
+      "flavor": {
+        "self": "A pressure front crowns you; your hair crackles with charge.",
+        "character": "A lance of air circles {target}, threading thunder through their pulse.",
+        "entity": { "*": "Gusts worry at {target}, as if searching for seams." },
+        "zone": "Over {zone}, cloudlines stitch and un-stitch in quick silver."
+      },
+      "vfx": {
+        "self": "⚡🌪️",
+        "character": "🌩️💨",
+        "entity": {
+          "golem": "⚡🪨",
+          "shadow": "⚡🌑",
+          "spirit": "⚡👻",
+          "beast": "⚡🐾",
+          "construct": "⚡🤖",
+          "*": "⚡🌀"
+        },
+        "zone": "🌩️☁️"
+      },
+      "variance": {
+        "world_effects": { "spiritual_noise": [0.03, 0.06], "media_signal": [0.01, 0.03] },
+        "zone_effects": { "energy": [0.03, 0.07] }
+      },
+      "scaling": {
+        "if_zone_has_marker": { "storm": { "zone.energy": "+0.02" } },
+        "unlock_zone_if_marker": { "storm_gate": "storm" }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "glyph_of_insight",
+      "name": "glyph_of_insight",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "traits_granted": ["clarity"],
+      "world_effects": { "media_signal": 0.03 },
+      "effects": {
+        "self": {
+          "traits_granted": ["clarity"],
+          "world_effects": { "media_signal": 0.03 }
+        },
+        "character": { "traits_granted": ["clarity"] },
+        "entity": { "*": { "state": { "enlightened": true } } },
+        "zone": {
+          "zone_effects": { "energy": 0.02, "markers_add": ["insight"] },
+          "world_effects": { "media_signal": 0.02, "symbolic_density": 0.02 }
+        }
+      },
+      "flavor": {
+        "self": "The world clicks a notch sharper—edges confess their forms.",
+        "character": "A quiet brightness finds {target}'s eyes.",
+        "entity": { "*": "A fine seam of meaning opens in {target}." },
+        "zone": "{zone} organizes itself—paths appear where none were seen."
+      },
+      "vfx": {
+        "self": "👁️✨",
+        "character": "✨🧠",
+        "entity": {
+          "golem": "👁️🪨",
+          "shadow": "👁️🌑",
+          "spirit": "👁️👻",
+          "beast": "👁️🐾",
+          "construct": "👁️🤖",
+          "*": "👁️🪄"
+        },
+        "zone": "🔷✨"
+      },
+      "variance": {
+        "world_effects": { "media_signal": [0.02, 0.05] },
+        "zone_effects": { "energy": [0.01, 0.03] }
+      },
+      "scaling": {
+        "if_user_has_trait": { "pattern_reader": { "world.symbolic_density": "+0.01" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "wand_of_flame",
+      "name": "wand_of_flame",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "traits_granted": ["fire_touched"],
+      "world_effects": { "individualism": 0.1 },
+      "charges": 3,
+      "effects": {
+        "self": {
+          "traits_granted": ["fire_touched"],
+          "world_effects": { "individualism": 0.1 }
+        },
+        "character": { "traits_granted": ["fire_marked"] },
+        "entity": {
+          "shadow": { "state": { "burned_level": 2, "purged": true } },
+          "*": { "state": { "burned_level": 1 } }
+        },
+        "zone": {
+          "zone_effects": { "energy": 0.04, "markers_add": ["flame"] },
+          "world_effects": { "symbolic_density": 0.03 }
+        }
+      },
+      "flavor": {
+        "self": "Heat ribbons around your hands; embers follow your gestures.",
+        "character": "A sheath of warm light clings to {target}.",
+        "entity": { "*": "Sparks sketch molten edges along {target}." },
+        "zone": "A wavering mirage lifts from {zone} as cinders dance."
+      },
+      "vfx": {
+        "self": "🔥✨",
+        "character": "🔥👐",
+        "entity": {
+          "golem": "🔥🪨",
+          "shadow": "🔥🌑",
+          "spirit": "🔥👻",
+          "beast": "🔥🐾",
+          "construct": "🔥🤖",
+          "*": "🔥⚙️"
+        },
+        "zone": "🔥🌫️"
+      },
+      "variance": {
+        "world_effects": { "individualism": [0.08, 0.12] },
+        "zone_effects": { "energy": [0.03, 0.06] }
+      },
+      "scaling": {
+        "if_zone_has_marker": { "flame": { "zone.energy": "+0.02" } },
+        "spawn_item": { "chance": 0.25, "item": "mirror_fragment" }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "seed_of_renewal",
+      "name": "seed_of_renewal",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "single_use": true,
+      "traits_granted": ["world_seeder"],
+      "world_effects": { "spiritual_noise": -0.05, "collectivism": 0.08 },
+      "effects": {
+        "self": {
+          "traits_granted": ["world_seeder"],
+          "world_effects": { "spiritual_noise": -0.05, "collectivism": 0.08 }
+        },
+        "character": { "traits_granted": ["renewed"] },
+        "entity": { "*": { "state": { "regrown": true } } },
+        "zone": {
+          "zone_effects": { "energy": 0.08, "markers_add": ["renewal"] },
+          "world_effects": { "collectivism": 0.05, "spiritual_noise": -0.04 }
+        }
+      },
+      "flavor": {
+        "self": "A green pulse travels outward from your sternum, quiet and sure.",
+        "character": "New leaf-veins shimmer across {target}'s silhouette.",
+        "entity": { "*": "Soft shoots breach the surface of {target}." },
+        "zone": "Roots whisper through {zone}; the soil remembers rain."
+      },
+      "vfx": {
+        "self": "🌱🌀",
+        "character": "🌿✨",
+        "entity": {
+          "golem": "🌱🪨",
+          "shadow": "🌱🌑",
+          "spirit": "🌱👻",
+          "beast": "🌱🐾",
+          "construct": "🌱🤖",
+          "*": "🌱🪄"
+        },
+        "zone": "🌾✨"
+      },
+      "variance": {
+        "world_effects": { "spiritual_noise": [-0.06, -0.03], "collectivism": [0.06, 0.10] },
+        "zone_effects": { "energy": [0.06, 0.10] }
+      },
+      "scaling": {
+        "spawn_item": { "chance": 0.35, "item": "driftwood_wand", "zone": "adjacent" }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "sigil_of_binding",
+      "name": "sigil_of_binding",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "requires_trait": "glyph_infused",
+      "traits_granted": ["bound_form"],
+      "world_effects": { "media_signal": 0.02 },
+      "effects": {
+        "self": {
+          "traits_granted": ["bound_form"],
+          "world_effects": { "media_signal": 0.02 }
+        },
+        "character": { "traits_granted": ["bound_form_light"] },
+        "entity": {
+          "beast": { "state": { "bound": true, "pacified": true } },
+          "*": { "state": { "bound": true } }
+        },
+        "zone": {
+          "zone_effects": { "energy": 0.02, "markers_add": ["binding"] },
+          "world_effects": { "media_signal": 0.02 }
+        }
+      },
+      "flavor": {
+        "self": "Lines cross and cinch until your outline feels exact.",
+        "character": "Invisible cords align around {target}, tidy as script.",
+        "entity": { "*": "Bands of sign clamp into place around {target}." },
+        "zone": "The air in {zone} knots—movement slows to measured beats."
+      },
+      "vfx": {
+        "self": "🪬⛓️",
+        "character": "⛓️✨",
+        "entity": {
+          "golem": "⛓️🪨",
+          "shadow": "⛓️🌑",
+          "spirit": "⛓️👻",
+          "beast": "⛓️🐾",
+          "construct": "⛓️🤖",
+          "*": "🪬🪢"
+        },
+        "zone": "⛓️📐"
+      },
+      "variance": {
+        "zone_effects": { "energy": [0.01, 0.03] }
+      },
+      "scaling": {
+        "if_recent_item_used": { "glyphstone": { "entity.bound_strength": "+1" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "echo_key",
+      "name": "echo_key",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "traits_granted": ["memory_unlocked"],
+      "world_effects": {},
+      "effects": {
+        "self": { "traits_granted": ["memory_unlocked"] },
+        "character": { "traits_granted": ["memory_unlocked"] },
+        "entity": { "*": { "state": { "opened": true } } },
+        "zone": {
+          "zone_effects": { "energy": 0.01, "markers_add": ["echo_open"] },
+          "world_effects": {}
+        }
+      },
+      "flavor": {
+        "self": "Teeth turn in a lock you didn’t know you carried.",
+        "character": "Something clicks inside {target}; a corridor lights up.",
+        "entity": { "*": "{target} yields with a soft, remembered sound." },
+        "zone": "Doors you hadn’t noticed in {zone} all stand ajar."
+      },
+      "vfx": {
+        "self": "🗝️🌫️",
+        "character": "🗝️✨",
+        "entity": {
+          "golem": "🗝️🪨",
+          "shadow": "🗝️🌑",
+          "spirit": "🗝️👻",
+          "beast": "🗝️🐾",
+          "construct": "🗝️🤖",
+          "*": "🗝️🌀"
+        },
+        "zone": "🚪✨"
+      },
+      "variance": {
+        "zone_effects": { "energy": [0.0, 0.02] }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "wand_of_inner_vision",
+      "name": "wand_of_inner_vision",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "traits_granted": ["introspective"],
+      "world_effects": { "spiritual_noise": 0.03 },
+      "effects": {
+        "self": {
+          "traits_granted": ["introspective"],
+          "world_effects": { "spiritual_noise": 0.03 }
+        },
+        "character": { "traits_granted": ["introspective_hint"] },
+        "entity": { "*": { "state": { "reflected": true } } },
+        "zone": {
+          "zone_effects": { "energy": 0.02, "markers_add": ["inner_vision"] },
+          "world_effects": { "spiritual_noise": 0.02 }
+        }
+      },
+      "flavor": {
+        "self": "Your gaze turns inward; rooms within rooms take shape.",
+        "character": "{target} goes quiet, as if listening to a private tide.",
+        "entity": { "*": "A memory-sheen gathers across {target}." },
+        "zone": "In {zone}, hush becomes architecture."
+      },
+      "vfx": {
+        "self": "🧿🌊",
+        "character": "🌊✨",
+        "entity": {
+          "golem": "🧿🪨",
+          "shadow": "🧿🌑",
+          "spirit": "🧿👻",
+          "beast": "🧿🐾",
+          "construct": "🧿🤖",
+          "*": "🧿✨"
+        },
+        "zone": "🌊🏛️"
+      },
+      "variance": {
+        "world_effects": { "spiritual_noise": [0.02, 0.05] },
+        "zone_effects": { "energy": [0.01, 0.03] }
+      },
+      "scaling": {
+        "if_user_has_trait": { "mirror_gaze": { "world.spiritual_noise": "-0.01" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "sword_of_logos",
+      "name": "sword_of_logos",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "cooldown": 60,
+      "charges": 3,
+      "traits_granted": ["truth_striker", "form_revealer"],
+      "world_effects": { "spiritual_noise": -0.04, "individualism": 0.07 },
+      "effects": {
+        "self": {
+          "traits_granted": ["truth_striker", "form_revealer"],
+          "world_effects": { "spiritual_noise": -0.04, "individualism": 0.07 }
+        },
+        "character": {
+          "traits_granted": ["truth_bound"],
+          "world_effects": { "collectivism": 0.02 }
+        },
+        "entity": { "*": { "state": { "illusion": "banished" } } },
+        "zone": {
+          "zone_effects": { "energy": 0.08, "markers_add": ["logos_cut"] },
+          "world_effects": { "symbolic_density": 0.06 }
+        }
+      },
+      "flavor": {
+        "self": "The edge names what it touches; doubt sloughs away.",
+        "character": "A clean line parts the haze around {target}.",
+        "entity": { "*": "False skins peel from {target}, crisp as ash." },
+        "zone": "In {zone}, the air brightens with ordered seams."
+      },
+      "vfx": {
+        "self": "⚔️✴️",
+        "character": "⚔️✨",
+        "entity": {
+          "golem": "⚔️🪨",
+          "shadow": "⚔️🌑",
+          "spirit": "⚔️👻",
+          "beast": "⚔️🐾",
+          "construct": "⚔️🤖",
+          "*": "⚔️🪄"
+        },
+        "zone": "✴️📐"
+      },
+      "variance": {
+        "world_effects": { "spiritual_noise": [-0.05, -0.02], "individualism": [0.05, 0.09] },
+        "zone_effects": { "energy": [0.06, 0.10] }
+      },
+      "scaling": {
+        "if_zone_has_marker": { "insight": { "entity.illusion_banish_strength": "+1" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "wisdoms_astrolabe",
+      "name": "wisdoms_astrolabe",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "traits_granted": ["cosmic_navigation", "pattern_reader"],
+      "world_effects": { "media_signal": 0.05, "collectivism": 0.04 },
+      "effects": {
+        "self": {
+          "traits_granted": ["cosmic_navigation", "pattern_reader"],
+          "world_effects": { "media_signal": 0.05, "collectivism": 0.04 }
+        },
+        "character": { "traits_granted": ["pattern_reader"] },
+        "entity": { "*": { "state": { "aligned": true } } },
+        "zone": {
+          "zone_effects": { "energy": 0.04, "markers_add": ["star_paths"] },
+          "world_effects": { "symbolic_density": 0.04 }
+        }
+      },
+      "flavor": {
+        "self": "Wheels within wheels click; you feel the sky’s grammar.",
+        "character": "Star-lines briefly trace themselves over {target}.",
+        "entity": { "*": "{target} takes its proper place among moving lights." },
+        "zone": "Constellations sketch navigable routes across {zone}."
+      },
+      "vfx": {
+        "self": "🧭✨",
+        "character": "⭐📈",
+        "entity": {
+          "golem": "🧭🪨",
+          "shadow": "🧭🌑",
+          "spirit": "🧭👻",
+          "beast": "🧭🐾",
+          "construct": "🧭🤖",
+          "*": "🧭🪄"
+        },
+        "zone": "🌌✨"
+      },
+      "variance": {
+        "world_effects": { "media_signal": [0.03, 0.07], "collectivism": [0.03, 0.05] },
+        "zone_effects": { "energy": [0.03, 0.05] }
+      },
+      "scaling": {
+        "if_user_has_trait": { "worldseer": { "world.symbolic_density": "+0.01" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "wisdoms_globe",
+      "name": "wisdoms_globe",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "cooldown": 0,
+      "charges": 999999,
+      "traits_granted": ["worldseer", "memory_cartographer"],
+      "world_effects": { "spiritual_noise": -0.03, "media_signal": 0.02 },
+      "effects": {
+        "self": {
+          "traits_granted": ["worldseer", "memory_cartographer"],
+          "world_effects": { "spiritual_noise": -0.03, "media_signal": 0.02 }
+        },
+        "character": {
+          "traits_granted": ["pattern_reader"],
+          "world_effects": { "collectivism": 0.01 }
+        },
+        "entity": {
+          "*": {
+            "traits_granted": ["charted_presence"],
+            "state": { "mapped": true }
+          }
+        },
+        "zone": {
+          "zone_effects": { "energy": 0.05, "markers_add": ["memory_current"] },
+          "world_effects": { "symbolic_density": 0.04 }
+        }
+      },
+      "flavor": {
+        "self": "Meridians light within the sphere—and in your mind.",
+        "character": "Coordinates cascade past {target} like rain.",
+        "entity": { "*": "{target} gains edges and latitudes it never had." },
+        "zone": "Currents of recall swirl through {zone}; nothing is lost."
+      },
+      "vfx": {
+        "self": "🌐✨",
+        "character": "🗺️✨",
+        "entity": {
+          "golem": "🌐🪨",
+          "shadow": "🌐🌑",
+          "spirit": "🌐👻",
+          "beast": "🌐🐾",
+          "construct": "🌐🤖",
+          "*": "🌐🪄"
+        },
+        "zone": "🌊🗺️"
+      },
+      "variance": {
+        "world_effects": { "spiritual_noise": [-0.04, -0.02], "media_signal": [0.01, 0.03] },
+        "zone_effects": { "energy": [0.04, 0.06] }
+      },
+      "scaling": {
+        "if_zone_has_marker": { "echo_open": { "zone.energy": "+0.02" } },
+        "spawn_item": { "chance": 0.20, "item": "signal_scroll", "zone": "current" }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "rusted_key",
+      "name": "rusted_key",
+      "usable_on": ["zone", "self", "character", "entity"],
+      "single_use": true,
+      "effects": {
+        "unlock_zone": "ancient_gate",
+        "zone": { "zone_effects": { "markers_add": ["gate_unsealed"] } }
+      },
+      "flavor": {
+        "self": "You weigh the key; old promises clink in the metal.",
+        "zone": "Tumblers complain in {zone}; a line of light appears."
+      },
+      "vfx": {
+        "self": "🗝️🧰",
+        "zone": "🗝️🚪"
+      },
+      "variance": {},
+      "scaling": {
+        "if_zone_has_marker": { "storm": { "unlock_zone": "storm_gate" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "symbolic_coin",
+      "name": "symbolic_coin",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "traits_granted": ["fortunate"],
+      "world_effects": { "media_signal": 0.02 },
+      "effects": {
+        "self": { "traits_granted": ["fortunate"] },
+        "character": { "traits_granted": ["fortunate"] },
+        "zone": {
+          "zone_effects": { "energy": 0.01, "markers_add": ["trade_memory"] },
+          "world_effects": { "media_signal": 0.02 }
+        }
+      },
+      "flavor": {
+        "self": "The coin rings twice: once here, once elsewhere.",
+        "zone": "Market whispers wake in {zone}; prices remember themselves."
+      },
+      "vfx": { "self": "🪙✨", "zone": "🪙📈" },
+      "variance": {
+        "world_effects": { "media_signal": [0.01, 0.03] }
+      },
+      "scaling": {
+        "spawn_item": { "chance": 0.15, "item": "signal_scroll", "zone": "adjacent" }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "amplifier_node",
+      "name": "amplifier_node",
+      "usable_on": ["zone", "self", "character", "entity"],
+      "world_effects": { "media_signal": 0.05 },
+      "effects": {
+        "zone": {
+          "zone_effects": { "energy": 0.04, "markers_add": ["signal_thread"] },
+          "world_effects": { "media_signal": 0.05, "symbolic_density": 0.02 }
+        }
+      },
+      "flavor": {
+        "zone": "Frequencies braid through {zone}; a stable tone forms."
+      },
+      "vfx": { "zone": "📡✨" },
+      "variance": {
+        "world_effects": { "media_signal": [0.04, 0.06] },
+        "zone_effects": { "energy": [0.03, 0.05] }
+      },
+      "scaling": {
+        "if_zone_has_marker": { "broadcast_signal": { "world.media_signal": "+0.02" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "signal_scroll",
+      "name": "signal_scroll",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "effects": {
+        "self": { "traits_granted": ["signal_awareness"] },
+        "zone": { "zone_effects": { "energy": 0.02, "markers_add": ["broadcast_signal"] } }
+      },
+      "flavor": {
+        "self": "Glyph-lines hum, then dissolve into the air.",
+        "zone": "A broadcast wakes in {zone}; silence learns to travel."
+      },
+      "vfx": { "self": "📜✨", "zone": "📜📡" },
+      "variance": {
+        "zone_effects": { "energy": [0.01, 0.03] }
+      },
+      "scaling": {
+        "if_recent_item_used": { "amplifier_node": { "zone.energy": "+0.01" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "mirror_fragment",
+      "name": "mirror_fragment",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "traits_granted": ["reflection_pulse"],
+      "effects": {
+        "self": { "traits_granted": ["reflection_pulse"] },
+        "character": { "traits_granted": ["echo_sensitive"] },
+        "zone": {
+          "zone_effects": { "energy": 0.02, "markers_add": ["reflection_pulse"] },
+          "world_effects": { "symbolic_density": 0.02 }
+        }
+      },
+      "flavor": {
+        "self": "A shard returns a version of you that nods back.",
+        "zone": "Surfaces in {zone} catch and multiply glances."
+      },
+      "vfx": { "self": "🪞✨", "zone": "🪞🌊" },
+      "variance": {
+        "zone_effects": { "energy": [0.01, 0.03] }
+      },
+      "scaling": {
+        "if_zone_has_marker": { "mirror_sign": { "world.symbolic_density": "+0.01" } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "crystal_orb",
+      "name": "crystal_orb",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "traits_granted": ["future_sight"],
+      "effects": {
+        "self": { "traits_granted": ["future_sight"] },
+        "zone": {
+          "zone_effects": { "energy": 0.03, "markers_add": ["foresight"] },
+          "world_effects": { "symbolic_density": 0.03 }
+        }
+      },
+      "flavor": {
+        "self": "Depths within the orb swirl like weather.",
+        "zone": "Contours of tomorrow show faintly in {zone}."
+      },
+      "vfx": { "self": "🔮✨", "zone": "🔮🌫️" },
+      "variance": {
+        "zone_effects": { "energy": [0.02, 0.04] }
+      },
+      "scaling": {
+        "if_user_has_trait": { "future_sight": { "zone.markers_add": ["foresight_plus"] } }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "sealed_book",
+      "name": "sealed_book",
+      "usable_on": ["self", "character", "entity", "zone"],
+      "effects": {
+        "self": { "traits_granted": ["memory_recall"] },
+        "zone": {
+          "zone_effects": { "energy": 0.02, "markers_add": ["echo_fragment"] },
+          "world_effects": { "symbolic_density": 0.02, "spiritual_noise": -0.01 }
+        }
+      },
+      "flavor": {
+        "self": "A voice from the margins finishes your sentence.",
+        "zone": "Stories un-swell and breathe in {zone}."
+      },
+      "vfx": { "self": "📖✨", "zone": "📖🌊" },
+      "variance": {
+        "world_effects": { "spiritual_noise": [-0.02, -0.0] }
+      },
+      "scaling": {
+        "spawn_item": { "chance": 0.1, "item": "echo_key", "zone": "current" }
+      },
+      "unlimited_for": ["Metis"]
+    },
+    {
+      "id": "driftwood_wand",
+      "name": "driftwood_wand",
+      "usable_on": ["zone", "self", "character", "entity"],
+      "effects": {
+        "zone": {
+          "zone_effects": { "energy": 0.02, "markers_add": ["tideline"] },
+          "world_effects": { "spiritual_noise": -0.01 }
+        }
+      },
+      "flavor": { "zone": "Tide-marks glow along {zone}; the room exhales." },
+      "vfx": { "zone": "🌊✨" },
+      "variance": {
+        "zone_effects": { "energy": [0.01, 0.03] },
+        "world_effects": { "spiritual_noise": [-0.02, 0.0] }
+      },
+      "scaling": {
+        "if_zone_has_marker": { "renewal": { "world.spiritual_noise": "-0.01" } }
+      },
+      "unlimited_for": ["Metis"]
+    }
+  ]
+}
